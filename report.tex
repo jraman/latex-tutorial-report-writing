@@ -1,7 +1,23 @@
 \documentclass{article}
 
 \usepackage[T1]{fontenc}    % to get small-caps with \textsc
-% \usepackage{bold-extra}		% better bold fonts
+% \usepackage{bold-extra}       % better bold fonts
+
+% loren ipsum ...
+\usepackage{lipsum}
+
+% Margin control.  includefoot => margin includes footer.
+\usepackage[margin=1.0in,left=1.5in,includefoot]{geometry}
+
+% Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}    % turn off default header
+\fancyfoot{}    % turn off default footer
+\fancyfoot[R]{\thepage}     % page-number flushed right
+\renewcommand{\headrulewidth}{0pt}  % turn off top (head) rule
+\renewcommand{\footrulewidth}{0pt}  % turn off bottom (foot) rule
+% end - header and footer
 
 \begin{document}
 
@@ -31,6 +47,11 @@ A LaTeX User\\
 
 \end{titlepage}
 
+\section{Introduction}\label{sec:intro}
+This is the first line of the report.  Below, we include a placeholder text in latin which is
+a jumbled form of text by Cicero.
+
+\lipsum[1]
 \end{document}
 
 
