@@ -47,11 +47,44 @@ A LaTeX User\\
 
 \end{titlepage}
 
+% change front matter page numbering to roman (different from arabic for rest of doc)
+\pagenumbering{roman}
+% "*" excludes this section from being numbered
+\section*{Acknowledgments}
+\addcontentsline{toc}{section}{\numberline{}Acknowledgments}
+I am grateful and thankful for all the people in my life who have helped me.
+
+\cleardoublepage
+
+% Probably needs more than one pass to build the TOC
+\tableofcontents
+\thispagestyle{empty}    % remove page-number on TOC page
+\cleardoublepage
+\setcounter{page}{1}    % skip TOC page numbering
+
 \section{Introduction}\label{sec:intro}
 This is the first line of the report.  Below, we include a placeholder text in latin which is
 a jumbled form of text by Cicero.
 
 \lipsum[1]
+
+% start next section on a new page
+\newpage
+\section{Groundhog Lifestyle}
+In this section we discuss the groundhog's lifestyle.  As you may know, groundhogs live in a hole
+in the ground and also climb trees.
+
+In the introduction on \pageref{sec:intro}, we did not say much.  But this is how a page reference
+works.
+
+\subsection{Diet}
+Mostly herbivorous, groundhogs eat primarily wild grasses and other vegetation, including berries
+and agricultural crops, when available.  An adult groundhog will eat more than a pound of vegetation daily.
+
+\subsubsection{Omnivores}
+Groundhogs also occasionally eat grubs, grasshoppers, insects, snails and other small animals,
+but are not as omnivorous as many other Sciuridae.  Groundhogs will occasionally eat baby birds
+they come upon by accident.
 \end{document}
 
 
