@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}    % to get small-caps with \textsc
+% \usepackage{bold-extra}		% better bold fonts
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+% "\\" starts a new paragraph - can also use double-return instead.
+% \line(slope, intercept){length}
+\line(1, 0){300}\\
+[0.25in]
+\huge\bfseries My Awesome Report\\
+[2mm]
+\line(1, 0){200}\\
+[1.5cm]
+\textsc{\LARGE Author Name}\\
+[0.75cm]
+\textsc{\Large Using LaTeX to Write a Simple Report}\\
+[9cm]
+\begin{flushright}
+\textsc{\large Leslie L.\\
+A LaTeX User\\
+\# 123456789\\
+19 March 2019\\}
+\end{flushright}
+
+\end{center}
+
+\end{titlepage}
+
+\end{document}
+
+
+% Notes
+% * By default, \textsc produced the warning:
+%   Font shape `OT1/cmr/bx/sc' undefined (Font) using `OT1/cmr/bx/n' instead on input line ...
+%   Added: \usepackage[T1]{fontenc}
+%   See:
+%   https://tex.stackexchange.com/questions/37618/when-using-textsc-latex-issues-warning-font-shape-ot1-cmr-bx-sc-undefined
+%   https://tex.stackexchange.com/questions/27411/small-caps-and-bold-face
+% * The spacing directives, e.g. [9cm], need to be specified after the double backslash (\\).
+% 
