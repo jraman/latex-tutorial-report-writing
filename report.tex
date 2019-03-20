@@ -303,6 +303,43 @@ $$\pi \approx 3.1415926536$$
 $$\pi \times 4 < 15$$
 $$x \neq 0$$
 
+Numbered equation:
+\begin{equation}
+\Sigma_{i=0}^{N - 1} a_{ij} x_i = b_j
+\end{equation}
+
+\subsection{Aligning equations}
+Right justified:
+\begin{eqnarray}
+  \sqrt{4} = \pm 2 \\
+  \pi \approx 3.1415926536 \\
+  \pi \times 4 < 15 \\
+  x \neq 0
+\end{eqnarray}
+
+Align the symbols using \texttt{\&}:
+\begin{eqnarray}
+  \sqrt{4} & = & \pm 2 \\
+  \pi & \approx & 3.1415926536 \\
+  \pi & \times & 4 < 15 \\
+  x & \neq & 0 \\
+\end{eqnarray}
+
+Do not number the equations:
+\begin{eqnarray*}
+  \sqrt{4} & = & \pm 2 \\
+  \pi & \approx & 3.1415926536 \\
+\end{eqnarray*}
+
+Equations with references.  Note that the numbering carries through the whole document.
+So, if there is an equation in a previous section, then the following equation will
+be numbered sequentially after that one.
+\begin{equation}\label{eq:linear1}
+x^2 + 6x + 5 = 0
+\end{equation}
+
+Equation~\ref{eq:linear1} is a quadratic equation with solutions $x=-1$ and $x=-5$.
+
 \cleardoublepage
 
 \section{LaTeX Symbols}
