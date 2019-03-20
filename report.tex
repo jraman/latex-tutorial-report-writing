@@ -54,6 +54,12 @@
 \renewcommand{\labelitemii}{$\circ$}
 \renewcommand{\labelitemiii}{$\triangleright$}
 
+% Chemistry equations
+\usepackage{mhchem}
+% Slanted fractions
+\usepackage{xfrac}
+
+
 \begin{document}
 
 \begin{titlepage}
@@ -255,6 +261,47 @@ Another itemized list example:
     wrap around to the next line.  I think this should be sufficient text.
     \item[\bfseries{Bar}] And this is bar.
 \end{enumerate}
+
+\cleardoublepage
+
+\section{Math Equations}
+An inline equation, $E = mc^2$, can be written with a single \$.
+
+A double dollar-sign (\$\$) produces an equation in its own line.  For example, $$PV = nRT$$,
+is the ideal gas law.
+
+Another example of an equation is below.  This one is from quantum mechanics.  It has both ordinary
+symbols like $m$ and special ones like $\hbar$.  Note that the spaces don't matter.
+$$-\frac{\hbar^2}{2m} \frac{d^2 \Psi}{dx^2} = E \Psi$$
+
+Chemical equations can also be written using the \texttt{mhchem}
+
+Here is the equation for the cumbustion of methane:
+
+\ce{ CH_{4(g)} + O_{2(g)} -> CO_{2(g)} + H_2 O_{(l)} }
+
+\subsection{Fractions}
+Here is a regular fraction:
+$$d = v_i t + \frac{1}{2} a t^2$$
+
+And here is a slanted fraction with \texttt{\textbackslash sfrac}:
+$$d = v_i t + \sfrac{1}{2} a t^2$$
+
+\subsection{Brackets}
+Ordinary brackets:
+$$(\frac{1}{2}) \cdot 2 = 1$$
+
+Larger brackets with \texttt{\textbackslash left( and \textbackslash right)}:
+$$\left( \frac{1}{2} \right) \cdot 2 = 1$$
+
+Another example:
+$$\left| \frac{a}{b} \right| = \frac{|a|}{|b|}, b \neq 0$$
+
+Examples of symbols:
+$$\sqrt{4} = \pm 2$$
+$$\pi \approx 3.1415926536$$
+$$\pi \times 4 < 15$$
+$$x \neq 0$$
 
 \cleardoublepage
 
