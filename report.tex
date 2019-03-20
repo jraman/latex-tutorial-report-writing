@@ -19,6 +19,10 @@
 \renewcommand{\footrulewidth}{0pt}  % turn off bottom (foot) rule
 % end - header and footer
 
+% Graphics control
+\usepackage{graphicx}   % import images
+\usepackage{float}      % control positions of floating objects
+
 \begin{document}
 
 \begin{titlepage}
@@ -51,6 +55,8 @@ A LaTeX User\\
 \pagenumbering{roman}
 % "*" excludes this section from being numbered
 \section*{Acknowledgments}
+% \numberline ensures that Acknowledgments is aligned with the text in the TOC, and
+% not the section numbers.
 \addcontentsline{toc}{section}{\numberline{}Acknowledgments}
 I am grateful and thankful for all the people in my life who have helped me.
 
@@ -62,11 +68,34 @@ I am grateful and thankful for all the people in my life who have helped me.
 \cleardoublepage
 \setcounter{page}{1}    % skip TOC page numbering
 
+% List of figures
+\listoffigures
+\addcontentsline{toc}{section}{\numberline{}List of Figures}
+\cleardoublepage
+
+% List of tables
+\listoftables
+\addcontentsline{toc}{section}{\numberline{}List of Tables}
+\cleardoublepage
+
 \section{Introduction}\label{sec:intro}
 This is the first line of the report.  Below, we include a placeholder text in latin which is
 a jumbled form of text by Cicero.
 
 \lipsum[1]
+
+% Insert a figure
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=3in]{figures/smiling-marmot.jpg}
+    \caption[Optional caption for list of figures]{A smiling marmot.  This is the caption that goes under the figure.}
+    \label{fig:smiling-marmot}
+\end{figure}
+
+In Fig.~\ref{fig:smiling-marmot}, you see a smiling marmot.  Marmots are large squirrels in the\\
+genus Marmota, with 15 species.  A groundhog, woodchuck, or whistlepig, of the species \textit{M. monax}
+is found in most of North America.
+
 
 % start next section on a new page
 \newpage
@@ -80,6 +109,22 @@ works.
 \subsection{Diet}
 Mostly herbivorous, groundhogs eat primarily wild grasses and other vegetation, including berries
 and agricultural crops, when available.  An adult groundhog will eat more than a pound of vegetation daily.
+
+% Table
+\begin{table}[H]    % H is for here
+    \centering
+    \caption[Optional table caption for table of contents]{Potentially longer caption for the table itself.
+    \label{tab:species}
+    Genus Marmota.  Subgenus Marmota.}
+    \begin{tabular}{l c r}    % alignment: left, center, right
+    Species & Latin name & Habitat\\ \hline
+    Alaskan marmot & M. broweri & Alaska\\
+    Alpine marmot & M. marmota & Only in Europe including the Alps\\
+    Black-capped marmot & M. camtschatica & Siberia\\
+    \end{tabular}
+\end{table}
+
+Table~\ref{tab:species} shows some of the species in the genus Marmota.
 
 \subsubsection{Omnivores}
 Groundhogs also occasionally eat grubs, grasshoppers, insects, snails and other small animals,
