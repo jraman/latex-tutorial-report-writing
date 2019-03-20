@@ -48,6 +48,12 @@
 % sort the numbered references, and compress with number ranges.
 \usepackage[numbers,sort&compress]{natbib}
 
+% https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf
+% Configure bulleted items (lists)
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\triangleright$}
+
 \begin{document}
 
 \begin{titlepage}
@@ -202,8 +208,56 @@ Here is an example of natbib hyphenating the citations\cite{Knuth84,Lamp86,Mitt0
 \bibliography{references/ref}
 \addcontentsline{toc}{section}{\numberline{}References}
 
+\cleardoublepage
+
 % Add appendix
 \appendix
+\section{Lists - itemized and enumerated}
+
+An itemized list is shown below:
+% A tri-level itemized list.  The bullet symbols are configured at the top of this file.
+\begin{itemize}
+    \item A first level item.
+    \item This is a long sentence in order to demonstrate how LaTeX wraps around a long
+    tautological sentence such as this one.
+    \begin{itemize}
+        \item A second level item.
+        \begin{itemize}
+            \item A third level item.
+            \item Another third level item.
+        \end{itemize}
+        \item Another second level item.
+    \end{itemize}
+\end{itemize}
+
+The symbols can be configured by redefining \texttt{labeli} etc.
+For example:\\
+\texttt{\textbackslash renewcommand\{\textbackslash labelitemi\}\{\$\textbackslash bullet\$\}}.
+
+\vspace{12pt}
+An enumerated (numbered) list is shown below:
+\begin{enumerate}
+    \item A first level enumerated item.
+    \begin{enumerate}
+        \item A second level enumerated item.
+        \begin{enumerate}
+            \item A third level enumerated item.
+            \item Another third level item.
+        \end{enumerate}
+        \item Another second level enumerated item.
+    \end{enumerate}
+    \item Another enumerated item.
+\end{enumerate}
+
+Another itemized list example:
+\begin{enumerate}
+    \item[\bfseries{Foo}] This is foo.  We add a sentence here to show how the sentence would
+    wrap around to the next line.  I think this should be sufficient text.
+    \item[\bfseries{Bar}] And this is bar.
+\end{enumerate}
+
+\cleardoublepage
+
 \section{LaTeX Symbols}
 \begin{itemize}
     \item \texttt{\textbackslash alpha} prints $\alpha$.
