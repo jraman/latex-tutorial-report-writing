@@ -44,6 +44,10 @@
 \newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
 \newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
 
+% Bibliography
+% sort the numbered references, and compress with number ranges.
+\usepackage[numbers,sort&compress]{natbib}
+
 \begin{document}
 
 \begin{titlepage}
@@ -113,7 +117,7 @@ a jumbled form of text by Cicero.
     \label{fig:smiling-marmot}
 \end{figure}
 
-In Fig.~\ref{fig:smiling-marmot}, you see a smiling marmot.  Marmots are large squirrels in the\\
+In Fig.~\ref{fig:smiling-marmot}, you see a smiling marmot.  Marmots are large squirrels in the
 genus Marmota, with 15 species.  A groundhog, woodchuck, or whistlepig, of the species \textit{M. monax}
 is found in most of North America.
 
@@ -149,6 +153,7 @@ Table~\ref{tab:species} shows some of the species in the genus Marmota.
 
 % Used in conjuction with package array.  Also, specify the width of the columns.
 % http://www.btaa.org/docs/default-source/research-data/at-a-glance_2016btaa.pdf?sfvrsn=4e7c4cf3_2
+% https://tex.stackexchange.com/questions/286950/how-to-create-a-table-with-fixed-column-widths
 \begin{table}[t]
     \centering
     \caption[Complicated table]{This is a complicated table.}
@@ -179,6 +184,22 @@ Table~\ref{tab:species} shows some of the species in the genus Marmota.
 Groundhogs also occasionally eat grubs, grasshoppers, insects, snails and other small animals,
 but are not as omnivorous as many other Sciuridae.  Groundhogs will occasionally eat baby birds
 they come upon by accident.
+
+\cleardoublepage
+
+\section{Citations}
+The TeXbook is awesome\cite{Knuth84} - this is an example citation.  Leslie Lamport worked on LaTeX
+while Knuth worked on TeX.  Here is an example of natbib sorting the citations\cite{Lamp86,Knuth84}.
+The book by Mittelbach and Goossens\cite{Mitt04} has also been influential.
+Here is an example of natbib hyphenating the citations\cite{Knuth84,Lamp86,Mitt04}.
+
+\cleardoublepage
+
+% \addcontentsline{toc}{section}{\numberline{}References}
+\bibliographystyle{IEEEtran}
+% ref.bib was created with BibDesk
+\bibliography{references/ref}
+
 \end{document}
 
 
