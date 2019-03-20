@@ -103,6 +103,8 @@ I am grateful and thankful for all the people in my life who have helped me.
 \addcontentsline{toc}{section}{\numberline{}List of Tables}
 \cleardoublepage
 
+\pagenumbering{arabic}
+
 \section{Introduction}\label{sec:intro}
 This is the first line of the report.  Below, we include a placeholder text in latin which is
 a jumbled form of text by Cicero.
@@ -195,10 +197,17 @@ Here is an example of natbib hyphenating the citations\cite{Knuth84,Lamp86,Mitt0
 
 \cleardoublepage
 
-% \addcontentsline{toc}{section}{\numberline{}References}
 \bibliographystyle{IEEEtran}
 % ref.bib was created with BibDesk
 \bibliography{references/ref}
+\addcontentsline{toc}{section}{\numberline{}References}
+
+% Add appendix
+\appendix
+\section{LaTeX Symbols}
+\begin{itemize}
+    \item \texttt{\textbackslash alpha} prints $\alpha$.
+\end{itemize}
 
 \end{document}
 
