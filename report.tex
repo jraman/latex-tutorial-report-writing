@@ -23,6 +23,27 @@
 \usepackage{graphicx}   % import images
 \usepackage{float}      % control positions of floating objects
 
+% Add hyperlinks to references, including in the TOC
+\usepackage[hidelinks]{hyperref}
+
+% Do not hyphenate and break words in a table
+\usepackage[none]{hyphenat}
+
+% Table
+% https://tex.stackexchange.com/questions/257128/how-does-the-newcolumntype-command-work
+% https://texfaq.org/FAQ-wholerow
+% http://mirror.las.iastate.edu/tex-archive/macros/latex/required/tools/array.pdf
+\usepackage{array}
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
 \begin{document}
 
 \begin{titlepage}
@@ -125,6 +146,34 @@ and agricultural crops, when available.  An adult groundhog will eat more than a
 \end{table}
 
 Table~\ref{tab:species} shows some of the species in the genus Marmota.
+
+% Used in conjuction with package array.  Also, specify the width of the columns.
+% http://www.btaa.org/docs/default-source/research-data/at-a-glance_2016btaa.pdf?sfvrsn=4e7c4cf3_2
+\begin{table}[t]
+    \centering
+    \caption[Complicated table]{This is a complicated table.}
+    % specify column width
+    % \begin{tabular}{$p{0.4in}^p{2in}^p{1.0in}^p{1.0in}^p{1.2in}}
+    % align and specify column width
+    \begin{tabular}{$R{0.4in}^L{2in}^R{1.0in}^R{1.0in}^R{1.2in}}
+    \rowstyle{\bfseries} Sl. No. & Name & Year Founded & Year Joined & Student Population \\ \hline
+    1. & University of Illinois & 1867 & 1896 & 42,453 \\
+    2. & Indiana University & 1820 & 1899 & 38,398 \\
+    3. & University of Iowa & 1847 & 1899 & 25,624 \\
+    5. & University of Michigan & 1817 & 1896 & 42,361 \\
+    6. & Michigan State University & 1855 & 1950 & 43,695 \\
+    7. & University of Minnesota & 1851 & 1896 & 39,302 \\
+    9. & Northwestern University & 1851 & 1896 & 17,475 \\
+    10. & Ohio State University & 1870 & 1912 & 51,817 \\
+    12. & Purdue University & 1869 & 1896 & 35,884 \\
+    14. & University of Wisconsin-Madison & 1848 & 1896 & 38,284 \\ \hline
+    \multicolumn{5}{c}{\bfseries{Most Recently Added}} \\ \hline
+    4. & University of Maryland & 1856 & 2014 & 34,444 \\
+    8. & University of Nebraska-Lincoln & 1869 & 2011 & 22,062 \\
+    11. & Pennsylvania State University & 1855 & 1990 & 45,874 \\
+    13. & Rutgers University & 1766 & 2014 & 42,749 \\
+    \end{tabular}
+\end{table}
 
 \subsubsection{Omnivores}
 Groundhogs also occasionally eat grubs, grasshoppers, insects, snails and other small animals,
